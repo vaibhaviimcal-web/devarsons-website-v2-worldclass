@@ -639,6 +639,7 @@
             padding: 1rem;
             border-radius: 15px;
             animation: messageSlide 0.3s ease;
+            white-space: pre-line;
         }
 
         @keyframes messageSlide {
@@ -1063,7 +1064,7 @@
             gap: 2rem;
         }
 
-        /* PREMIUM CARD DESIGN */
+        /* PREMIUM CARD DESIGN WITH SVG ICONS */
         .buzz-card {
             position: relative;
             padding: 2.5rem;
@@ -1088,63 +1089,22 @@
         }
 
         /* UNIQUE GRADIENT BACKGROUNDS FOR EACH CARD */
-        .buzz-card:nth-child(1) {
-            background: linear-gradient(135deg, #FFF5E6 0%, #FFE8CC 100%);
-        }
+        .buzz-card:nth-child(1) { background: linear-gradient(135deg, #FFF5E6 0%, #FFE8CC 100%); }
+        .buzz-card:nth-child(2) { background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); }
+        .buzz-card:nth-child(3) { background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); }
+        .buzz-card:nth-child(4) { background: linear-gradient(135deg, #F3E5F5 0%, #E1BEE7 100%); }
+        .buzz-card:nth-child(5) { background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); }
+        .buzz-card:nth-child(6) { background: linear-gradient(135deg, #E0F2F1 0%, #B2DFDB 100%); }
+        .buzz-card:nth-child(7) { background: linear-gradient(135deg, #FCE4EC 0%, #F8BBD0 100%); }
+        .buzz-card:nth-child(8) { background: linear-gradient(135deg, #FFF9C4 0%, #FFF59D 100%); }
+        .buzz-card:nth-child(9) { background: linear-gradient(135deg, #E8EAF6 0%, #C5CAE9 100%); }
+        .buzz-card:nth-child(10) { background: linear-gradient(135deg, #FFEBEE 0%, #FFCDD2 100%); }
+        .buzz-card:nth-child(11) { background: linear-gradient(135deg, #F1F8E9 0%, #DCEDC8 100%); }
+        .buzz-card:nth-child(12) { background: linear-gradient(135deg, #E0F7FA 0%, #B2EBF2 100%); }
+        .buzz-card:nth-child(13) { background: linear-gradient(135deg, #FBE9E7 0%, #FFCCBC 100%); }
+        .buzz-card:nth-child(14) { background: linear-gradient(135deg, #EFEBE9 0%, #D7CCC8 100%); }
 
-        .buzz-card:nth-child(2) {
-            background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
-        }
-
-        .buzz-card:nth-child(3) {
-            background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
-        }
-
-        .buzz-card:nth-child(4) {
-            background: linear-gradient(135deg, #F3E5F5 0%, #E1BEE7 100%);
-        }
-
-        .buzz-card:nth-child(5) {
-            background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
-        }
-
-        .buzz-card:nth-child(6) {
-            background: linear-gradient(135deg, #E0F2F1 0%, #B2DFDB 100%);
-        }
-
-        .buzz-card:nth-child(7) {
-            background: linear-gradient(135deg, #FCE4EC 0%, #F8BBD0 100%);
-        }
-
-        .buzz-card:nth-child(8) {
-            background: linear-gradient(135deg, #FFF9C4 0%, #FFF59D 100%);
-        }
-
-        .buzz-card:nth-child(9) {
-            background: linear-gradient(135deg, #E8EAF6 0%, #C5CAE9 100%);
-        }
-
-        .buzz-card:nth-child(10) {
-            background: linear-gradient(135deg, #FFEBEE 0%, #FFCDD2 100%);
-        }
-
-        .buzz-card:nth-child(11) {
-            background: linear-gradient(135deg, #F1F8E9 0%, #DCEDC8 100%);
-        }
-
-        .buzz-card:nth-child(12) {
-            background: linear-gradient(135deg, #E0F7FA 0%, #B2EBF2 100%);
-        }
-
-        .buzz-card:nth-child(13) {
-            background: linear-gradient(135deg, #FBE9E7 0%, #FFCCBC 100%);
-        }
-
-        .buzz-card:nth-child(14) {
-            background: linear-gradient(135deg, #EFEBE9 0%, #D7CCC8 100%);
-        }
-
-        /* ICON CONTAINER */
+        /* SVG ICON CONTAINER */
         .buzz-icon {
             width: 70px;
             height: 70px;
@@ -1152,67 +1112,30 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
             margin-bottom: 1.5rem;
             box-shadow: 0 8px 20px rgba(0,0,0,0.15);
             transition: all 0.4s ease;
         }
 
-        .buzz-card:nth-child(1) .buzz-icon {
-            background: linear-gradient(135deg, #D4622F, #C9A961);
+        .buzz-icon svg {
+            width: 35px;
+            height: 35px;
         }
 
-        .buzz-card:nth-child(2) .buzz-icon {
-            background: linear-gradient(135deg, #2C5F4F, #4CAF50);
-        }
-
-        .buzz-card:nth-child(3) .buzz-icon {
-            background: linear-gradient(135deg, #2A5F7F, #42A5F5);
-        }
-
-        .buzz-card:nth-child(4) .buzz-icon {
-            background: linear-gradient(135deg, #6B4C9A, #AB47BC);
-        }
-
-        .buzz-card:nth-child(5) .buzz-icon {
-            background: linear-gradient(135deg, #FF6F00, #FFA726);
-        }
-
-        .buzz-card:nth-child(6) .buzz-icon {
-            background: linear-gradient(135deg, #00897B, #26A69A);
-        }
-
-        .buzz-card:nth-child(7) .buzz-icon {
-            background: linear-gradient(135deg, #C9302C, #EF5350);
-        }
-
-        .buzz-card:nth-child(8) .buzz-icon {
-            background: linear-gradient(135deg, #F57F17, #FDD835);
-        }
-
-        .buzz-card:nth-child(9) .buzz-icon {
-            background: linear-gradient(135deg, #5E35B1, #7E57C2);
-        }
-
-        .buzz-card:nth-child(10) .buzz-icon {
-            background: linear-gradient(135deg, #D32F2F, #EF5350);
-        }
-
-        .buzz-card:nth-child(11) .buzz-icon {
-            background: linear-gradient(135deg, #689F38, #9CCC65);
-        }
-
-        .buzz-card:nth-child(12) .buzz-icon {
-            background: linear-gradient(135deg, #0097A7, #26C6DA);
-        }
-
-        .buzz-card:nth-child(13) .buzz-icon {
-            background: linear-gradient(135deg, #E64A19, #FF7043);
-        }
-
-        .buzz-card:nth-child(14) .buzz-icon {
-            background: linear-gradient(135deg, #5D4037, #8D6E63);
-        }
+        .buzz-card:nth-child(1) .buzz-icon { background: linear-gradient(135deg, #D4622F, #C9A961); }
+        .buzz-card:nth-child(2) .buzz-icon { background: linear-gradient(135deg, #2C5F4F, #4CAF50); }
+        .buzz-card:nth-child(3) .buzz-icon { background: linear-gradient(135deg, #2A5F7F, #42A5F5); }
+        .buzz-card:nth-child(4) .buzz-icon { background: linear-gradient(135deg, #6B4C9A, #AB47BC); }
+        .buzz-card:nth-child(5) .buzz-icon { background: linear-gradient(135deg, #FF6F00, #FFA726); }
+        .buzz-card:nth-child(6) .buzz-icon { background: linear-gradient(135deg, #00897B, #26A69A); }
+        .buzz-card:nth-child(7) .buzz-icon { background: linear-gradient(135deg, #C9302C, #EF5350); }
+        .buzz-card:nth-child(8) .buzz-icon { background: linear-gradient(135deg, #F57F17, #FDD835); }
+        .buzz-card:nth-child(9) .buzz-icon { background: linear-gradient(135deg, #5E35B1, #7E57C2); }
+        .buzz-card:nth-child(10) .buzz-icon { background: linear-gradient(135deg, #D32F2F, #EF5350); }
+        .buzz-card:nth-child(11) .buzz-icon { background: linear-gradient(135deg, #689F38, #9CCC65); }
+        .buzz-card:nth-child(12) .buzz-icon { background: linear-gradient(135deg, #0097A7, #26C6DA); }
+        .buzz-card:nth-child(13) .buzz-icon { background: linear-gradient(135deg, #E64A19, #FF7043); }
+        .buzz-card:nth-child(14) .buzz-icon { background: linear-gradient(135deg, #5D4037, #8D6E63); }
 
         .buzz-card:hover .buzz-icon {
             transform: scale(1.15) rotate(10deg);
@@ -1687,7 +1610,11 @@
             .buzz-icon {
                 width: 60px;
                 height: 60px;
-                font-size: 1.8rem;
+            }
+
+            .buzz-icon svg {
+                width: 30px;
+                height: 30px;
             }
         }
 
@@ -1792,7 +1719,7 @@
         </div>
     </section>
 
-    <!-- PREMIUM Buzzwords Section -->
+    <!-- PREMIUM Buzzwords Section WITH SVG ICONS -->
     <section class="buzzwords-section">
         <div class="section-header reveal">
             <h2 class="section-title">Why <span class="gradient">Devarsons</span></h2>
@@ -1801,72 +1728,180 @@
         
         <div class="buzzwords-grid">
             <div class="buzz-card">
-                <div class="buzz-icon">🏛️</div>
+                <div class="buzz-icon">
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M32 8L28 20H16L26 28L22 40L32 32L42 40L38 28L48 20H36L32 8Z" fill="white" stroke="white" stroke-width="2"/>
+                        <circle cx="32" cy="32" r="24" stroke="white" stroke-width="2" fill="none"/>
+                    </svg>
+                </div>
                 <div class="buzz-title">Established in 1923</div>
                 <div class="buzz-desc">102 years of colour innovation and expertise</div>
             </div>
+            
             <div class="buzz-card">
-                <div class="buzz-icon">🌍</div>
+                <div class="buzz-icon">
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="32" cy="32" r="20" stroke="white" stroke-width="2"/>
+                        <path d="M32 12 L32 32 L42 42" stroke="white" stroke-width="2"/>
+                        <circle cx="20" cy="20" r="3" fill="white"/>
+                        <circle cx="44" cy="20" r="3" fill="white"/>
+                        <circle cx="44" cy="44" r="3" fill="white"/>
+                    </svg>
+                </div>
                 <div class="buzz-title">Supplier to MNCs Globally</div>
                 <div class="buzz-desc">Trusted partner to multinational corporations worldwide</div>
             </div>
+            
             <div class="buzz-card">
-                <div class="buzz-icon">📊</div>
+                <div class="buzz-icon">
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="12" y="40" width="8" height="16" fill="white"/>
+                        <rect x="22" y="30" width="8" height="26" fill="white"/>
+                        <rect x="32" y="20" width="8" height="36" fill="white"/>
+                        <rect x="42" y="25" width="8" height="31" fill="white"/>
+                        <path d="M10 15 L25 20 L35 12 L50 18" stroke="white" stroke-width="2" fill="none"/>
+                    </svg>
+                </div>
                 <div class="buzz-title">Strong QC with Statistical Tools</div>
                 <div class="buzz-desc">Advanced quality control ensuring consistency</div>
             </div>
+            
             <div class="buzz-card">
-                <div class="buzz-icon">♻️</div>
+                <div class="buzz-icon">
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M32 10 C32 10 20 15 20 25 C20 35 32 45 32 45 C32 45 44 35 44 25 C44 15 32 10 32 10Z" stroke="white" stroke-width="2" fill="white" opacity="0.3"/>
+                        <circle cx="32" cy="25" r="5" fill="white"/>
+                        <path d="M28 48 Q32 52 36 48" stroke="white" stroke-width="2"/>
+                    </svg>
+                </div>
                 <div class="buzz-title">Responsible Sourcing</div>
                 <div class="buzz-desc">Ethical and sustainable supply chain practices</div>
             </div>
+            
             <div class="buzz-card">
-                <div class="buzz-icon">💻</div>
+                <div class="buzz-icon">
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="14" y="14" width="36" height="36" rx="4" stroke="white" stroke-width="2" fill="none"/>
+                        <path d="M14 24 L50 24" stroke="white" stroke-width="2"/>
+                        <path d="M24 14 L24 50" stroke="white" stroke-width="2"/>
+                        <circle cx="32" cy="32" r="6" fill="white"/>
+                        <path d="M38 38 L46 46" stroke="white" stroke-width="2"/>
+                    </svg>
+                </div>
                 <div class="buzz-title">Fully SAP Integrated</div>
                 <div class="buzz-desc">Real-time transparency and traceability</div>
             </div>
+            
             <div class="buzz-card">
-                <div class="buzz-icon">🎯</div>
+                <div class="buzz-icon">
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="32" cy="32" r="20" stroke="white" stroke-width="2" fill="none"/>
+                        <circle cx="32" cy="32" r="3" fill="white"/>
+                        <path d="M32 12 L32 22" stroke="white" stroke-width="2"/>
+                        <path d="M32 42 L32 52" stroke="white" stroke-width="2"/>
+                        <path d="M12 32 L22 32" stroke="white" stroke-width="2"/>
+                        <path d="M42 32 L52 32" stroke="white" stroke-width="2"/>
+                    </svg>
+                </div>
                 <div class="buzz-title">Application Oriented Focus</div>
                 <div class="buzz-desc">Custom solutions for specific end-use applications</div>
             </div>
+            
             <div class="buzz-card">
-                <div class="buzz-icon">🛡️</div>
+                <div class="buzz-icon">
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M32 10 L20 22 L20 50 L44 50 L44 22 L32 10Z" stroke="white" stroke-width="2" fill="white" opacity="0.3"/>
+                        <path d="M28 30 L32 34 L38 26" stroke="white" stroke-width="2" fill="none"/>
+                    </svg>
+                </div>
                 <div class="buzz-title">Strong EHS Commitment</div>
                 <div class="buzz-desc">Environmental, health & safety beyond compliance</div>
             </div>
+            
             <div class="buzz-card">
-                <div class="buzz-icon">🔧</div>
+                <div class="buzz-icon">
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="32" cy="20" r="8" stroke="white" stroke-width="2" fill="white" opacity="0.3"/>
+                        <path d="M20 50 C20 38 26 32 32 32 C38 32 44 38 44 50" stroke="white" stroke-width="2" fill="none"/>
+                        <path d="M48 28 L54 28 M51 25 L51 31" stroke="white" stroke-width="2"/>
+                    </svg>
+                </div>
                 <div class="buzz-title">Technical Assistance</div>
                 <div class="buzz-desc">Expert support on applications and implementation</div>
             </div>
+            
             <div class="buzz-card">
-                <div class="buzz-icon">🔬</div>
+                <div class="buzz-icon">
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M32 12 L32 32 L52 32" stroke="white" stroke-width="2" fill="none"/>
+                        <circle cx="32" cy="32" r="20" stroke="white" stroke-width="2" fill="none"/>
+                        <path d="M20 20 L28 28" stroke="white" stroke-width="2"/>
+                        <circle cx="18" cy="18" r="3" fill="white"/>
+                    </svg>
+                </div>
                 <div class="buzz-title">Application Development Expertise</div>
                 <div class="buzz-desc">Innovative solutions for evolving needs</div>
             </div>
+            
             <div class="buzz-card">
-                <div class="buzz-icon">⚡</div>
+                <div class="buzz-icon">
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 32 L32 20 L44 32 L32 44 Z" fill="white" opacity="0.3" stroke="white" stroke-width="2"/>
+                        <path d="M32 12 L32 20" stroke="white" stroke-width="2"/>
+                        <path d="M32 44 L32 52" stroke="white" stroke-width="2"/>
+                        <path d="M12 32 L20 32" stroke="white" stroke-width="2"/>
+                        <path d="M44 32 L52 32" stroke="white" stroke-width="2"/>
+                    </svg>
+                </div>
                 <div class="buzz-title">Decisive & Agile</div>
                 <div class="buzz-desc">Rapid response to market demands</div>
             </div>
+            
             <div class="buzz-card">
-                <div class="buzz-icon">📈</div>
+                <div class="buzz-icon">
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 25 L25 15 L49 15 L49 49 L15 49 Z" stroke="white" stroke-width="2" fill="white" opacity="0.3"/>
+                        <path d="M25 25 L35 35" stroke="white" stroke-width="2"/>
+                        <path d="M35 25 L25 35" stroke="white" stroke-width="2"/>
+                    </svg>
+                </div>
                 <div class="buzz-title">Lean Management</div>
                 <div class="buzz-desc">Efficient operations and quick decision-making</div>
             </div>
+            
             <div class="buzz-card">
-                <div class="buzz-icon">💰</div>
+                <div class="buzz-icon">
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="32" cy="28" r="12" stroke="white" stroke-width="2" fill="white" opacity="0.3"/>
+                        <path d="M20 40 L44 40 L44 52 L20 52 Z" stroke="white" stroke-width="2" fill="white" opacity="0.3"/>
+                        <path d="M28 28 L32 32 L36 24" stroke="white" stroke-width="2" fill="none"/>
+                    </svg>
+                </div>
                 <div class="buzz-title">Debt Free</div>
                 <div class="buzz-desc">Financial stability and independence</div>
             </div>
+            
             <div class="buzz-card">
-                <div class="buzz-icon">✅</div>
+                <div class="buzz-icon">
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="16" y="16" width="32" height="32" rx="4" stroke="white" stroke-width="2" fill="none"/>
+                        <path d="M24 28 L28 32 L40 20" stroke="white" stroke-width="2" fill="none"/>
+                        <circle cx="32" cy="32" r="2" fill="white"/>
+                    </svg>
+                </div>
                 <div class="buzz-title">Emphasis on Consistency</div>
                 <div class="buzz-desc">Batch-to-batch uniformity within narrow tolerances</div>
             </div>
+            
             <div class="buzz-card">
-                <div class="buzz-icon">🏭</div>
+                <div class="buzz-icon">
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="12" y="30" width="40" height="20" rx="2" stroke="white" stroke-width="2" fill="white" opacity="0.3"/>
+                        <circle cx="22" cy="40" r="4" fill="white"/>
+                        <circle cx="42" cy="40" r="4" fill="white"/>
+                        <path d="M20 30 L20 20 L32 12 L44 20 L44 30" stroke="white" stroke-width="2" fill="none"/>
+                    </svg>
+                </div>
                 <div class="buzz-title">Partially Backward Integrated</div>
                 <div class="buzz-desc">Control over critical raw material supply</div>
             </div>
@@ -2197,12 +2232,422 @@
         </div>
     </footer>
 
-    <!-- MODALS (Color Selector, Color Wheel, Sample Request, Chatbot, Lab Tour, ROI Calculator, Comparison) -->
-    <!-- [Previous modal HTML code remains exactly the same - truncated for brevity] -->
+    <!-- MODALS START HERE -->
+    
+    <!-- Color Selector Modal -->
+    <div id="colorSelector" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🎨 Color Selector Tool</h2>
+                <button class="modal-close" onclick="closeModal('colorSelector')">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="selector-step">
+                    <h3>Step 1: Select Your Industry</h3>
+                    <div class="selector-options" id="industryOptions">
+                        <div class="selector-option" onclick="selectOption('industry', 'cosmetics')">
+                            <div style="font-size: 2rem;">💄</div>
+                            <div>Cosmetics</div>
+                        </div>
+                        <div class="selector-option" onclick="selectOption('industry', 'plastics')">
+                            <div style="font-size: 2rem;">🧪</div>
+                            <div>Plastics</div>
+                        </div>
+                        <div class="selector-option" onclick="selectOption('industry', 'food')">
+                            <div style="font-size: 2rem;">🍔</div>
+                            <div>Food & Beverage</div>
+                        </div>
+                        <div class="selector-option" onclick="selectOption('industry', 'petroleum')">
+                            <div style="font-size: 2rem;">⛽</div>
+                            <div>Petroleum</div>
+                        </div>
+                        <div class="selector-option" onclick="selectOption('industry', 'textiles')">
+                            <div style="font-size: 2rem;">👕</div>
+                            <div>Textiles</div>
+                        </div>
+                        <div class="selector-option" onclick="selectOption('industry', 'inks')">
+                            <div style="font-size: 2rem;">🖊️</div>
+                            <div>Inks</div>
+                        </div>
+                    </div>
+                </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+                <div class="selector-step">
+                    <h3>Step 2: Select Desired Properties</h3>
+                    <div class="selector-options" id="propertyOptions">
+                        <div class="selector-option" onclick="selectOption('property', 'heat-stable')">Heat Stable</div>
+                        <div class="selector-option" onclick="selectOption('property', 'light-fast')">Light Fast</div>
+                        <div class="selector-option" onclick="selectOption('property', 'water-soluble')">Water Soluble</div>
+                        <div class="selector-option" onclick="selectOption('property', 'oil-soluble')">Oil Soluble</div>
+                        <div class="selector-option" onclick="selectOption('property', 'fda-approved')">FDA Approved</div>
+                        <div class="selector-option" onclick="selectOption('property', 'high-strength')">High Strength</div>
+                    </div>
+                </div>
+
+                <button class="btn-primary" onclick="showResults()" style="width: 100%; margin-top: 2rem;">Find Matching Dyes</button>
+
+                <div class="selector-results" id="selectorResults">
+                    <h3>Recommended Dyes:</h3>
+                    <div class="result-card">
+                        <div class="result-color" style="background: #D4622F;"></div>
+                        <div class="result-info">
+                            <h4>Solvent Orange 60</h4>
+                            <p>High-performance orange dye with excellent heat stability</p>
+                            <p><strong>Applications:</strong> Plastics, Petroleum Products</p>
+                            <button class="btn-primary" onclick="requestSample('Solvent Orange 60')">Request Sample</button>
+                        </div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-color" style="background: #C9302C;"></div>
+                        <div class="result-info">
+                            <h4>Cosmetic Red 7</h4>
+                            <p>FDA approved red dye for cosmetic applications</p>
+                            <p><strong>Applications:</strong> Cosmetics, Personal Care</p>
+                            <button class="btn-primary" onclick="requestSample('Cosmetic Red 7')">Request Sample</button>
+                        </div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-color" style="background: #C9A961;"></div>
+                        <div class="result-info">
+                            <h4>Metal Complex Yellow 150</h4>
+                            <p>Superior light fastness for outdoor applications</p>
+                            <p><strong>Applications:</strong> Plastics, Coatings</p>
+                            <button class="btn-primary" onclick="requestSample('Metal Complex Yellow 150')">Request Sample</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Color Wheel Modal -->
+    <div id="colorWheel" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🌈 Interactive Color Wheel</h2>
+                <button class="modal-close" onclick="closeModal('colorWheel')">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="color-wheel-container">
+                    <div class="color-wheel">
+                        <div class="color-wheel-center">
+                            <span id="selectedColorName">Select a Color</span>
+                        </div>
+                    </div>
+                    <h3>Explore Color Families</h3>
+                    <div class="color-families">
+                        <div class="color-family" style="background: #ff0000;" onclick="exploreFamily('Red')">Red</div>
+                        <div class="color-family" style="background: #ff8800;" onclick="exploreFamily('Orange')">Orange</div>
+                        <div class="color-family" style="background: #ffff00; color: #000;" onclick="exploreFamily('Yellow')">Yellow</div>
+                        <div class="color-family" style="background: #00ff00; color: #000;" onclick="exploreFamily('Green')">Green</div>
+                        <div class="color-family" style="background: #00ffff; color: #000;" onclick="exploreFamily('Cyan')">Cyan</div>
+                        <div class="color-family" style="background: #0000ff;" onclick="exploreFamily('Blue')">Blue</div>
+                        <div class="color-family" style="background: #ff00ff;" onclick="exploreFamily('Magenta')">Magenta</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sample Request Modal -->
+    <div id="sampleRequest" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>📦 Request Free Sample</h2>
+                <button class="modal-close" onclick="closeModal('sampleRequest')">×</button>
+            </div>
+            <div class="modal-body">
+                <form id="sampleForm" onsubmit="submitSampleRequest(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name *</label>
+                            <input type="text" required placeholder="John">
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name *</label>
+                            <input type="text" required placeholder="Doe">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" required placeholder="john.doe@company.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone *</label>
+                            <input type="tel" required placeholder="+1 234 567 8900">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Company Name *</label>
+                        <input type="text" required placeholder="Your Company">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Industry *</label>
+                            <select required>
+                                <option value="">Select Industry</option>
+                                <option>Cosmetics</option>
+                                <option>Plastics</option>
+                                <option>Food & Beverage</option>
+                                <option>Petroleum Products</option>
+                                <option>Textiles</option>
+                                <option>Inks</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Product Interest</label>
+                            <select>
+                                <option value="">Select Product</option>
+                                <option>Solvent Colours</option>
+                                <option>Food Colours</option>
+                                <option>Cosmetics Colours</option>
+                                <option>Metal Complex Dyes</option>
+                                <option>Pigments & Emulsions</option>
+                                <option>Lake Colours</option>
+                                <option>Liquid Dyes</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Application Details</label>
+                        <textarea rows="4" placeholder="Tell us about your specific application requirements..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%;">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot Modal -->
+    <div id="chatbot" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>💬 Live Chat Support</h2>
+                <button class="modal-close" onclick="closeModal('chatbot')">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="chatbot-container">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="chat-message bot">
+                            <div class="message-bubble">
+                                👋 Hello! I'm your Devarsons AI assistant. How can I help you today?
+                                <div class="chat-quick-replies">
+                                    <button class="quick-reply-btn" onclick="quickReply('Tell me about your products')">📦 Products</button>
+                                    <button class="quick-reply-btn" onclick="quickReply('Request a sample')">🎨 Sample</button>
+                                    <button class="quick-reply-btn" onclick="quickReply('ISO certifications')">🏆 Certifications</button>
+                                    <button class="quick-reply-btn" onclick="quickReply('Pricing information')">💰 Pricing</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="typing-indicator" id="typingIndicator">
+                        <span class="typing-dot"></span>
+                        <span class="typing-dot"></span>
+                        <span class="typing-dot"></span>
+                    </div>
+                    <div class="chat-input-container">
+                        <input type="text" class="chat-input" id="chatInput" placeholder="Type your message..." onkeypress="handleChatEnter(event)">
+                        <button class="chat-send" onclick="sendMessage()">➤</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Virtual Lab Tour Modal -->
+    <div id="labTour" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🔬 Virtual Lab Tour</h2>
+                <button class="modal-close" onclick="closeModal('labTour')">×</button>
+            </div>
+            <div class="modal-body">
+                <p style="margin-bottom: 2rem;">Explore our state-of-the-art facilities and see where innovation happens.</p>
+                <div class="lab-tour-grid">
+                    <div class="lab-section" style="background: linear-gradient(135deg, rgba(212, 98, 47, 0.8), rgba(201, 169, 97, 0.8));">
+                        <div class="lab-overlay">
+                            <h3>Development Lab</h3>
+                            <p>Where new molecules are born</p>
+                        </div>
+                    </div>
+                    <div class="lab-section" style="background: linear-gradient(135deg, rgba(44, 95, 79, 0.8), rgba(42, 95, 127, 0.8));">
+                        <div class="lab-overlay">
+                            <h3>Analytical Lab</h3>
+                            <p>Precision testing & quality control</p>
+                        </div>
+                    </div>
+                    <div class="lab-section" style="background: linear-gradient(135deg, rgba(107, 76, 154, 0.8), rgba(201, 48, 44, 0.8));">
+                        <div class="lab-overlay">
+                            <h3>Application Lab</h3>
+                            <p>Real-world application testing</p>
+                        </div>
+                    </div>
+                    <div class="lab-section" style="background: linear-gradient(135deg, rgba(201, 169, 97, 0.8), rgba(212, 98, 47, 0.8));">
+                        <div class="lab-overlay">
+                            <h3>Manufacturing Floor</h3>
+                            <p>Where precision meets scale</p>
+                        </div>
+                    </div>
+                    <div class="lab-section" style="background: linear-gradient(135deg, rgba(42, 95, 127, 0.8), rgba(44, 95, 79, 0.8));">
+                        <div class="lab-overlay">
+                            <h3>Quality Control</h3>
+                            <p>Statistical tools & consistency</p>
+                        </div>
+                    </div>
+                    <div class="lab-section" style="background: linear-gradient(135deg, rgba(201, 48, 44, 0.8), rgba(107, 76, 154, 0.8));">
+                        <div class="lab-overlay">
+                            <h3>Packaging Area</h3>
+                            <p>Contamination-free packaging</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: 2rem; text-align: center;">
+                    <button class="btn-primary" onclick="alert('Schedule a physical tour by contacting sales@devarsons.com')">Schedule Physical Tour</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ROI Calculator Modal -->
+    <div id="roiCalculator" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>💰 ROI Calculator</h2>
+                <button class="modal-close" onclick="closeModal('roiCalculator')">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="calculator-section">
+                    <h3>Calculate Your Cost Savings</h3>
+                    <div class="calculator-input">
+                        <label>Current Dye Cost (per kg):</label>
+                        <input type="number" id="currentCost" placeholder="100" oninput="calculateROI()">
+                    </div>
+                    <div class="calculator-input">
+                        <label>Monthly Usage (kg):</label>
+                        <input type="number" id="monthlyUsage" placeholder="1000" oninput="calculateROI()">
+                    </div>
+                    <div class="calculator-input">
+                        <label>Current Rejection Rate (%):</label>
+                        <input type="number" id="rejectionRate" placeholder="5" oninput="calculateROI()">
+                    </div>
+                    <div class="calculator-input">
+                        <label>Expected Devarsons Cost (per kg):</label>
+                        <input type="number" id="devarsonsCost" placeholder="95" oninput="calculateROI()">
+                    </div>
+                </div>
+
+                <div class="roi-results" id="roiResults" style="display: none;">
+                    <h3 style="margin-bottom: 1.5rem;">Your Potential Savings</h3>
+                    <div class="roi-metric">
+                        <span>Monthly Savings:</span>
+                        <span class="roi-value" id="monthlySavings">$0</span>
+                    </div>
+                    <div class="roi-metric">
+                        <span>Annual Savings:</span>
+                        <span class="roi-value" id="annualSavings">$0</span>
+                    </div>
+                    <div class="roi-metric">
+                        <span>Quality Improvement:</span>
+                        <span class="roi-value" id="qualityImprovement">0%</span>
+                    </div>
+                    <div class="roi-metric">
+                        <span>ROI Period:</span>
+                        <span class="roi-value" id="roiPeriod">Immediate</span>
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem; text-align: center;">
+                    <button class="btn-primary" onclick="openModal('sampleRequest'); closeModal('roiCalculator');">Request Sample to Verify</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Comparison Modal -->
+    <div id="comparison" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>⚖️ Product Comparison</h2>
+                <button class="modal-close" onclick="closeModal('comparison')">×</button>
+            </div>
+            <div class="modal-body">
+                <h3 style="margin-bottom: 1rem;">Compare Devarsons vs. Competitors</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Devarsons</th>
+                            <th>Competitor A</th>
+                            <th>Competitor B</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Batch-to-Batch Consistency</td>
+                            <td><span class="check-icon">✓</span> 99.9%</td>
+                            <td>95%</td>
+                            <td>92%</td>
+                        </tr>
+                        <tr>
+                            <td>Custom Formulation</td>
+                            <td><span class="check-icon">✓</span> Yes</td>
+                            <td><span class="cross-icon">✗</span> Limited</td>
+                            <td><span class="cross-icon">✗</span> No</td>
+                        </tr>
+                        <tr>
+                            <td>ISO Triple Certified</td>
+                            <td><span class="check-icon">✓</span> 9001, 14001, 45001</td>
+                            <td><span class="check-icon">✓</span> 9001 only</td>
+                            <td><span class="cross-icon">✗</span> No</td>
+                        </tr>
+                        <tr>
+                            <td>SAP Integration</td>
+                            <td><span class="check-icon">✓</span> Full</td>
+                            <td><span class="cross-icon">✗</span> No</td>
+                            <td><span class="cross-icon">✗</span> No</td>
+                        </tr>
+                        <tr>
+                            <td>R&D Support</td>
+                            <td><span class="check-icon">✓</span> Dedicated Team</td>
+                            <td>Limited</td>
+                            <td><span class="cross-icon">✗</span> No</td>
+                        </tr>
+                        <tr>
+                            <td>Lead Time</td>
+                            <td><span class="check-icon">✓</span> 2-3 weeks</td>
+                            <td>4-6 weeks</td>
+                            <td>6-8 weeks</td>
+                        </tr>
+                        <tr>
+                            <td>Technical Support</td>
+                            <td><span class="check-icon">✓</span> 24/7</td>
+                            <td>Business hours</td>
+                            <td>Email only</td>
+                        </tr>
+                        <tr>
+                            <td>Debt Status</td>
+                            <td><span class="check-icon">✓</span> Debt Free</td>
+                            <td>Unknown</td>
+                            <td>Unknown</td>
+                        </tr>
+                        <tr>
+                            <td>Heritage</td>
+                            <td><span class="check-icon">✓</span> 102 Years</td>
+                            <td>45 Years</td>
+                            <td>28 Years</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="margin-top: 2rem; text-align: center;">
+                    <button class="btn-primary" onclick="openModal('sampleRequest'); closeModal('comparison');">Experience the Devarsons Difference</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // [All previous JavaScript code remains exactly the same]
         // Create animated color particles
         function createColorParticles() {
             const container = document.getElementById('particles');
@@ -2304,14 +2749,523 @@
 
         // Modal Functions
         function openModal(modalId) {
-            // Modal opening code
+            document.getElementById(modalId).classList.add('active');
+            document.body.style.overflow = 'hidden';
         }
 
         function closeModal(modalId) {
-            // Modal closing code
+            document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = 'auto';
         }
 
-        // [Rest of JavaScript remains the same]
+        // Color Selector
+        let selectedIndustry = null;
+        let selectedProperty = null;
+
+        function selectOption(type, value) {
+            if (type === 'industry') {
+                selectedIndustry = value;
+                document.querySelectorAll('#industryOptions .selector-option').forEach(el => {
+                    el.classList.remove('selected');
+                });
+            } else {
+                selectedProperty = value;
+                document.querySelectorAll('#propertyOptions .selector-option').forEach(el => {
+                    el.classList.remove('selected');
+                });
+            }
+            event.target.closest('.selector-option').classList.add('selected');
+        }
+
+        function showResults() {
+            if (!selectedIndustry) {
+                alert('Please select an industry first');
+                return;
+            }
+            document.getElementById('selectorResults').classList.add('active');
+            document.getElementById('selectorResults').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function requestSample(productName) {
+            closeModal('colorSelector');
+            openModal('sampleRequest');
+            alert('Sample request for: ' + productName);
+        }
+
+        // Color Wheel
+        function exploreFamily(colorName) {
+            document.getElementById('selectedColorName').textContent = colorName + ' Family';
+            alert('Exploring ' + colorName + ' dyes. We have 15+ shades in the ' + colorName + ' family.');
+        }
+
+        // Sample Request Form
+        function submitSampleRequest(event) {
+            event.preventDefault();
+            alert('Thank you! Your sample request has been submitted. Our team will contact you within 24 hours.');
+            closeModal('sampleRequest');
+            event.target.reset();
+        }
+
+        // Enhanced Chatbot with comprehensive responses
+        const chatbotKnowledge = {
+            'product': {
+                keywords: ['product', 'dye', 'colour', 'color', 'what do you sell', 'offerings'],
+                response: `We offer 8 comprehensive product lines:
+
+🎨 **Solvent Colours** - High-performance industrial colorants
+🍔 **Food Colours** - FDA approved for safe food applications
+💄 **Cosmetics Colours** - EU, US FDA, Schedule Q India compliant
+🧪 **Acid, Basic & Direct Colours** - Versatile multi-application dyes
+⚗️ **Metal Complex Dyes** - Superior performance and fastness
+🎨 **Pigments & Emulsions** - High-quality pigment solutions
+🌈 **Lake Colours** - Insoluble pigments for diverse uses
+💧 **Liquid Dyes** - Ready-to-use liquid formulations
+
+Which product line interests you?`
+            },
+            'sample': {
+                keywords: ['sample', 'request', 'try', 'test', 'free sample'],
+                response: `I'd be happy to help you request a free sample! 
+
+📦 **Sample Request Process:**
+1. Click the "Request Sample" button below
+2. Fill in your details and application requirements
+3. Our team will contact you within 24 hours
+4. Receive your customized sample within 5-7 business days
+
+Would you like me to open the sample request form for you?`,
+                action: () => { closeModal('chatbot'); openModal('sampleRequest'); }
+            },
+            'price': {
+                keywords: ['price', 'cost', 'pricing', 'how much', 'quote', 'quotation'],
+                response: `💰 **Pricing Information:**
+
+Our pricing varies based on:
+• Product type and specifications
+• Order volume and frequency
+• Customization requirements
+• Delivery location
+
+📞 **For accurate pricing:**
+• Email: sales@devarsons.com
+• Phone: +91 22 2372 5120
+• Or request a sample and our team will provide a detailed quote
+
+💡 **Tip:** Use our ROI Calculator to estimate potential cost savings!`
+            },
+            'iso': {
+                keywords: ['iso', 'certification', 'certified', 'quality', 'standard', 'accreditation'],
+                response: `🏆 **Our Certifications:**
+
+✅ **ISO 9001:2015** - Quality Management System
+✅ **ISO 14001:2015** - Environmental Management
+✅ **ISO 45001:2018** - Occupational Health & Safety
+✅ **Government Recognized Export House**
+
+We're committed to international quality, environmental, and safety standards. All our products comply with global regulations including FDA, EU Cosmetics, and Schedule Q India.`
+            },
+            'company': {
+                keywords: ['about', 'company', 'history', 'established', 'who are you', 'devarsons'],
+                response: `🏭 **About Devarsons Industries:**
+
+📅 **Established:** 1923 (102 years of excellence!)
+📍 **Location:** Ahmedabad, India
+🌍 **Reach:** Supplying to MNCs globally
+💪 **Strength:** Debt-free, financially stable
+🔬 **Focus:** Application-oriented colour solutions
+
+**What makes us different:**
+• 99.9% batch-to-batch consistency
+• Fully SAP integrated operations
+• Dedicated R&D team for custom formulations
+• 24/7 technical support
+• 2-3 weeks lead time
+
+We're not just a dye manufacturer - we're your strategic colour solution partner!`
+            },
+            'industry': {
+                keywords: ['industry', 'application', 'use', 'sector', 'market'],
+                response: `🏢 **Industries We Serve:**
+
+• 🧴 Cosmetics & Personal Care
+• 🧪 Plastics & Polymers
+• ⛽ Petroleum Products (Fuel, Lubricants, Coolants)
+• 🖊️ Inks & Printing
+• 🍔 Food & Beverage
+• 👕 Textiles (High-end VAT dyes)
+• 🌾 Agro Colorants
+• 🎨 Paints & Varnishes
+• 🔬 Medical Applications
+• 🔍 Non-Destructive Testing
+• ✈️ Aerial Acrobatics
+• ⚙️ Customized Specialized Applications
+
+Which industry are you in?`
+            },
+            'rd': {
+                keywords: ['r&d', 'research', 'development', 'lab', 'laboratory', 'custom', 'formulation'],
+                response: `🔬 **Our R&D Capabilities:**
+
+**3 Specialized Labs:**
+
+1️⃣ **Development Lab**
+   • Custom molecule development
+   • Process optimization
+   • Waste minimization
+
+2️⃣ **Analytical Lab**
+   • In-house testing for all parameters
+   • Global regulatory compliance
+   • Quality assurance
+
+3️⃣ **Application Lab**
+   • Application-specific solutions
+   • Molecule modification
+   • Performance testing
+
+💡 **We can:**
+• Modify dyes for your specific application
+• Control trace impurities
+• Adjust physical characteristics
+• Ensure regulatory compliance
+
+Want to discuss a custom formulation?`
+            },
+            'delivery': {
+                keywords: ['delivery', 'lead time', 'shipping', 'how long', 'when', 'timeline'],
+                response: `⏱️ **Delivery Timeline:**
+
+📦 **Standard Orders:** 2-3 weeks
+🚀 **Express Orders:** Available on request
+🌍 **Global Shipping:** We ship to 50+ countries
+
+**Our Advantage:**
+• Faster than competitors (4-8 weeks)
+• Real-time order tracking via SAP
+• Automated status updates
+• Full batch traceability
+
+📞 For urgent requirements, contact:
+• Email: sales@devarsons.com
+• Phone: +91 22 2372 5120`
+            },
+            'support': {
+                keywords: ['support', 'help', 'technical', 'assistance', 'problem', 'issue'],
+                response: `🛠️ **Technical Support:**
+
+**We provide:**
+• 24/7 technical assistance
+• Application guidance
+• Troubleshooting support
+• Implementation help
+• Performance optimization
+
+**Contact Methods:**
+📧 Email: sales@devarsons.com
+📞 Phone: +91 22 2372 5120
+💬 Live Chat: Right here!
+
+**Response Time:**
+• Chat: Immediate
+• Email: Within 4 hours
+• Phone: Instant
+
+How can I assist you today?`
+            },
+            'consistency': {
+                keywords: ['consistency', 'quality', 'batch', 'uniform', 'reliable'],
+                response: `✅ **Our Consistency Guarantee:**
+
+**99.9% Batch-to-Batch Consistency**
+
+**How we achieve this:**
+• Advanced statistical quality control tools
+• Technologically advanced equipment
+• Formal purchasing policy for raw materials
+• Continuous process monitoring
+• Internal specifications beyond standard requirements
+
+**Benefits for you:**
+• Predictable results every time
+• Reduced rejection rates
+• Lower production costs
+• Consistent end-product quality
+
+💡 Use our ROI Calculator to see potential savings!`
+            },
+            'sap': {
+                keywords: ['sap', 'tracking', 'order status', 'traceability', 'system'],
+                response: `💻 **SAP Integration Benefits:**
+
+**Real-Time Transparency:**
+• Order status tracking
+• Automated updates
+• Batch information recording
+• Full traceability
+• Documentation cycle management
+
+**You get:**
+• Instant order visibility
+• Automated notifications
+• Complete batch history
+• Seamless communication
+• Efficient operations
+
+This is a unique advantage - most competitors don't offer this level of integration!`
+            },
+            'sustainability': {
+                keywords: ['sustainability', 'environment', 'green', 'eco', 'ehs', 'responsible'],
+                response: `🌱 **Our Sustainability Commitment:**
+
+**ISO 14001:2015 Certified**
+
+**Environmental Initiatives:**
+• Responsible sourcing practices
+• Waste minimization programs
+• Carbon footprint reduction
+• Contamination-free packaging
+• Continuous improvement culture
+
+**EHS Policy:**
+• Beyond government requirements
+• Strong safety commitment
+• Employee welfare focus
+• Ethical trading practices
+
+We go above and beyond compliance to create a sustainable future!`
+            },
+            'compare': {
+                keywords: ['compare', 'competitor', 'vs', 'better', 'difference', 'why choose'],
+                response: `⚖️ **Why Choose Devarsons?**
+
+**Our Advantages:**
+✅ 99.9% consistency (vs 92-95%)
+✅ Custom formulation (vs limited/none)
+✅ ISO Triple Certified (vs single/none)
+✅ Full SAP integration (vs none)
+✅ Dedicated R&D team (vs limited/none)
+✅ 2-3 weeks lead time (vs 4-8 weeks)
+✅ 24/7 support (vs business hours/email)
+✅ 102 years heritage (vs 28-45 years)
+✅ Debt-free company
+
+Want to see the full comparison table?`,
+                action: () => { closeModal('chatbot'); openModal('comparison'); }
+            },
+            'contact': {
+                keywords: ['contact', 'reach', 'call', 'email', 'address', 'location'],
+                response: `📞 **Contact Information:**
+
+**Head Office:**
+📍 Ahmedabad, India
+
+**Get in Touch:**
+📧 Email: sales@devarsons.com
+📞 Phone: +91 22 2372 5120
+💬 Live Chat: Right here!
+
+**Business Hours:**
+🕐 Monday - Friday: 9:00 AM - 6:00 PM IST
+🕐 Saturday: 9:00 AM - 1:00 PM IST
+
+**Quick Actions:**
+• Request a sample
+• Schedule a call
+• Book a lab tour
+• Get a quote
+
+What would you like to do?`
+            },
+            'tour': {
+                keywords: ['tour', 'visit', 'facility', 'lab tour', 'see'],
+                response: `🔬 **Virtual Lab Tour Available!**
+
+**Explore our facilities:**
+• Development Lab - Where innovation happens
+• Analytical Lab - Precision testing
+• Application Lab - Real-world testing
+• Manufacturing Floor - Scale production
+• Quality Control - Statistical excellence
+• Packaging Area - Contamination-free
+
+Would you like to:
+1. Take a virtual tour now
+2. Schedule a physical visit
+
+Click below to start the virtual tour!`,
+                action: () => { closeModal('chatbot'); openModal('labTour'); }
+            },
+            'roi': {
+                keywords: ['roi', 'savings', 'calculator', 'cost benefit', 'return'],
+                response: `💰 **Calculate Your Savings!**
+
+**Our ROI Calculator helps you estimate:**
+• Monthly cost savings
+• Annual savings potential
+• Quality improvement benefits
+• Payback period
+
+**Typical savings:**
+• 5-10% on material costs
+• 90% reduction in rejection rates
+• Faster lead times
+• Better consistency
+
+Want to calculate your specific ROI?`,
+                action: () => { closeModal('chatbot'); openModal('roiCalculator'); }
+            },
+            'selector': {
+                keywords: ['find', 'which', 'recommend', 'suggest', 'right dye', 'choose'],
+                response: `🎨 **Find Your Perfect Dye!**
+
+**Our Color Selector Tool helps you:**
+• Select by industry
+• Filter by properties
+• Get instant recommendations
+• Request samples directly
+
+**Properties we can match:**
+• Heat stability
+• Light fastness
+• Water/oil solubility
+• FDA approval
+• High strength
+
+Ready to find your perfect match?`,
+                action: () => { closeModal('chatbot'); openModal('colorSelector'); }
+            }
+        };
+
+        // Chatbot Functions
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            
+            if (!message) return;
+            
+            const messagesContainer = document.getElementById('chatMessages');
+            
+            // User message
+            const userMsg = document.createElement('div');
+            userMsg.className = 'chat-message user';
+            userMsg.innerHTML = `<div class="message-bubble">${message}</div>`;
+            messagesContainer.appendChild(userMsg);
+            
+            input.value = '';
+            
+            // Show typing indicator
+            const typingIndicator = document.getElementById('typingIndicator');
+            typingIndicator.classList.add('active');
+            
+            // Bot response (simulated delay)
+            setTimeout(() => {
+                typingIndicator.classList.remove('active');
+                
+                const botMsg = document.createElement('div');
+                botMsg.className = 'chat-message bot';
+                
+                const response = getBotResponse(message);
+                
+                botMsg.innerHTML = `<div class="message-bubble">${response.text}</div>`;
+                messagesContainer.appendChild(botMsg);
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                
+                // Execute action if available
+                if (response.action) {
+                    setTimeout(response.action, 500);
+                }
+            }, 1000);
+            
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function getBotResponse(message) {
+            const msg = message.toLowerCase();
+            
+            // Check each knowledge category
+            for (const [key, data] of Object.entries(chatbotKnowledge)) {
+                if (data.keywords.some(keyword => msg.includes(keyword))) {
+                    return {
+                        text: data.response,
+                        action: data.action
+                    };
+                }
+            }
+            
+            // Default response with suggestions
+            return {
+                text: `I'd be happy to help! Here are some topics I can assist with:
+
+📦 **Products** - Our 8 product lines
+🎨 **Samples** - Request free samples
+💰 **Pricing** - Get a quote
+🏆 **Certifications** - ISO standards
+🏭 **Company** - About Devarsons
+🔬 **R&D** - Custom formulations
+🌍 **Industries** - Applications we serve
+📞 **Contact** - Get in touch
+
+Or try asking:
+• "Tell me about your products"
+• "How do I request a sample?"
+• "What are your ISO certifications?"
+• "Compare with competitors"
+
+What would you like to know?`
+            };
+        }
+
+        function quickReply(message) {
+            document.getElementById('chatInput').value = message;
+            sendMessage();
+        }
+
+        function handleChatEnter(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        // ROI Calculator
+        function calculateROI() {
+            const currentCost = parseFloat(document.getElementById('currentCost').value) || 0;
+            const monthlyUsage = parseFloat(document.getElementById('monthlyUsage').value) || 0;
+            const rejectionRate = parseFloat(document.getElementById('rejectionRate').value) || 0;
+            const devarsonsCost = parseFloat(document.getElementById('devarsonsCost').value) || 0;
+            
+            if (currentCost && monthlyUsage && devarsonsCost) {
+                const costSavings = (currentCost - devarsonsCost) * monthlyUsage;
+                const qualitySavings = (currentCost * monthlyUsage * rejectionRate / 100) * 0.9;
+                const totalMonthlySavings = costSavings + qualitySavings;
+                const annualSavings = totalMonthlySavings * 12;
+                
+                document.getElementById('monthlySavings').textContent = '$' + totalMonthlySavings.toFixed(2);
+                document.getElementById('annualSavings').textContent = '$' + annualSavings.toFixed(2);
+                document.getElementById('qualityImprovement').textContent = (rejectionRate * 0.9).toFixed(1) + '%';
+                document.getElementById('roiPeriod').textContent = 'Immediate';
+                
+                document.getElementById('roiResults').style.display = 'block';
+            }
+        }
+
+        // Close modal on outside click
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
     </script>
 </body>
 </html>
