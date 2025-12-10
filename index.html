@@ -256,6 +256,7 @@
             font-size: 0.9rem;
             transition: all 0.3s ease;
             position: relative;
+            cursor: pointer;
         }
 
         .nav-links a::after {
@@ -463,6 +464,11 @@
             height: 80px;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            flex-shrink: 0;
+        }
+
+        .result-info {
+            flex: 1;
         }
 
         .result-info h4 {
@@ -473,6 +479,7 @@
         .result-info p {
             color: var(--text-light);
             margin-bottom: 0.5rem;
+            font-size: 0.95rem;
         }
 
         .btn-primary {
@@ -484,6 +491,7 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
+            font-size: 0.9rem;
         }
 
         .btn-primary:hover {
@@ -533,6 +541,8 @@
             justify-content: center;
             font-weight: 700;
             font-size: 1.2rem;
+            text-align: center;
+            padding: 1rem;
         }
 
         .color-families {
@@ -936,6 +946,7 @@
             border: 2px solid var(--primary-orange);
             text-decoration: none;
             display: inline-block;
+            font-size: 1rem;
         }
 
         .hero-cta.primary {
@@ -954,14 +965,497 @@
             box-shadow: 0 10px 30px rgba(212, 98, 47, 0.3);
         }
 
+        /* Buzzwords with Color Animation */
+        .buzzwords-section {
+            padding: 6rem 5%;
+            background: var(--white);
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .section-title {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-title .gradient {
+            background: linear-gradient(135deg, var(--primary-orange), var(--primary-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            font-size: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .buzzwords-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .buzz-card {
+            background: linear-gradient(135deg, #FFF5F0, #FFFFFF);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.5s ease;
+            border-left: 4px solid var(--primary-orange);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .buzz-card.visible {
+            animation: cardSlideIn 0.6s ease forwards;
+        }
+
+        @keyframes cardSlideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .buzz-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 98, 47, 0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .buzz-card:hover::before {
+            left: 100%;
+        }
+
+        .buzz-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 20px 60px rgba(212, 98, 47, 0.3);
+            border-left-color: var(--primary-gold);
+        }
+
+        .buzz-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: var(--text-dark);
+            transition: color 0.3s;
+        }
+
+        .buzz-card:hover .buzz-title {
+            color: var(--primary-orange);
+        }
+
+        .buzz-desc {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Accreditations with Rotating Icons */
+        .accreditations-section {
+            padding: 6rem 5%;
+            background: var(--stone);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .accreditations-section::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(201, 169, 97, 0.1), transparent);
+            top: -100px;
+            right: -100px;
+            animation: float 15s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-50px, 50px); }
+        }
+
+        .accred-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .accred-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .accred-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent, rgba(212, 98, 47, 0.05), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .accred-card:hover::after {
+            transform: translateX(100%);
+        }
+
+        .accred-card:hover {
+            transform: translateY(-15px) rotate(2deg);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .accred-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1.5rem;
+            transition: all 0.5s ease;
+        }
+
+        .accred-card:hover .accred-icon {
+            transform: rotateY(360deg) scale(1.2);
+        }
+
+        .accred-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .accred-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Content Section with Animated Quotes */
+        .content-section {
+            padding: 6rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .content-section h2 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+        }
+
+        .content-section h2 .accent {
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-orange), var(--primary-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .quote-block {
+            background: linear-gradient(135deg, var(--stone), #FFFFFF);
+            padding: 3rem;
+            border-left: 5px solid var(--primary-orange);
+            margin: 3rem 0;
+            font-style: italic;
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .quote-block::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 8rem;
+            color: rgba(212, 98, 47, 0.1);
+            font-family: Georgia, serif;
+        }
+
+        .quote-block:hover {
+            transform: translateX(10px);
+            box-shadow: -10px 10px 40px rgba(212, 98, 47, 0.2);
+        }
+
+        .quote-author {
+            font-style: normal;
+            font-weight: 600;
+            color: var(--primary-orange);
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+
+        /* Product Cards with Color Reveal */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.5s ease;
+            border-top: 4px solid var(--primary-orange);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(212, 98, 47, 0.1), rgba(201, 169, 97, 0.1));
+            transition: width 0.5s ease;
+            z-index: 0;
+        }
+
+        .product-card:hover::before {
+            width: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+
+        .product-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            position: relative;
+            z-index: 1;
+            transition: color 0.3s;
+        }
+
+        .product-card:hover h3 {
+            color: var(--primary-orange);
+        }
+
+        .product-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Business Segments with Pulse Effect */
+        .segments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .segment-item {
+            background: linear-gradient(135deg, #FFF5F0, #FFFFFF);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .segment-item::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(212, 98, 47, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s, height 0.5s;
+        }
+
+        .segment-item:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .segment-item:hover {
+            border-color: var(--primary-orange);
+            transform: scale(1.1);
+            color: var(--primary-orange);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--black), var(--dark-grey));
+            color: var(--white);
+            padding: 5rem 5% 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+            animation: slideGradient 3s ease-in-out infinite;
+        }
+
+        @keyframes slideGradient {
+            0%, 100% { transform: translateX(-100%); }
+            50% { transform: translateX(100%); }
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo img {
+            max-width: 220px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-logo img:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+        }
+
+        .footer-tagline {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-gold);
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--primary-gold);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+            transition: transform 0.3s;
+        }
+
+        .footer-links li:hover {
+            transform: translateX(5px);
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 3rem;
             }
 
+            .section-title {
+                font-size: 2.5rem;
+            }
+
             .nav-links {
                 display: none;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .color-blob {
+                width: 300px !important;
+                height: 300px !important;
             }
 
             .color-wheel {
@@ -982,6 +1476,15 @@
                 width: 50px;
                 height: 50px;
                 font-size: 1.2rem;
+            }
+
+            .hero-cta-group {
+                flex-direction: column;
+            }
+
+            .hero-cta {
+                width: 100%;
+                text-align: center;
             }
         }
 
@@ -1028,10 +1531,14 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#" onclick="openModal('colorSelector')">Color Selector</a></li>
-                <li><a href="#" onclick="openModal('labTour')">Virtual Lab Tour</a></li>
-                <li><a href="#" onclick="openModal('comparison')">Compare Products</a></li>
-                <li><a href="#" onclick="openModal('sampleRequest')">Request Sample</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#philosophy">Philosophy</a></li>
+                <li><a href="#customer-engagement">Customer Engagement</a></li>
+                <li><a href="#rd">R&D</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#accreditations">Accreditations</a></li>
+                <li><a onclick="openModal('colorSelector')">Color Selector</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -1082,6 +1589,399 @@
         </div>
     </section>
 
+    <!-- Buzzwords Section -->
+    <section class="buzzwords-section">
+        <div class="section-header reveal">
+            <h2 class="section-title">Why <span class="gradient">Devarsons</span></h2>
+            <p class="section-subtitle">Excellence in every aspect of our operations</p>
+        </div>
+        
+        <div class="buzzwords-grid">
+            <div class="buzz-card">
+                <div class="buzz-title">Established in 1923</div>
+                <div class="buzz-desc">102 years of colour innovation and expertise</div>
+            </div>
+            <div class="buzz-card">
+                <div class="buzz-title">Supplier to MNCs Globally</div>
+                <div class="buzz-desc">Trusted partner to multinational corporations worldwide</div>
+            </div>
+            <div class="buzz-card">
+                <div class="buzz-title">Strong QC with Statistical Tools</div>
+                <div class="buzz-desc">Advanced quality control ensuring consistency</div>
+            </div>
+            <div class="buzz-card">
+                <div class="buzz-title">Responsible Sourcing</div>
+                <div class="buzz-desc">Ethical and sustainable supply chain practices</div>
+            </div>
+            <div class="buzz-card">
+                <div class="buzz-title">Fully SAP Integrated</div>
+                <div class="buzz-desc">Real-time transparency and traceability</div>
+            </div>
+            <div class="buzz-card">
+                <div class="buzz-title">Application Oriented Focus</div>
+                <div class="buzz-desc">Custom solutions for specific end-use applications</div>
+            </div>
+            <div class="buzz-card">
+                <div class="buzz-title">Strong EHS Commitment</div>
+                <div class="buzz-desc">Environmental, health & safety beyond compliance</div>
+            </div>
+            <div class="buzz-card">
+                <div class="buzz-title">Technical Assistance</div>
+                <div class="buzz-desc">Expert support on applications and implementation</div>
+            </div>
+            <div class="buzz-card">
+                <div class="buzz-title">Application Development Expertise</div>
+                <div class="buzz-desc">Innovative solutions for evolving needs</div>
+            </div>
+            <div class="buzz-card">
+                <div class="buzz-title">Decisive & Agile</div>
+                <div class="buzz-desc">Rapid response to market demands</div>
+            </div>
+            <div class="buzz-card">
+                <div class="buzz-title">Lean Management</div>
+                <div class="buzz-desc">Efficient operations and quick decision-making</div>
+            </div>
+            <div class="buzz-card">
+                <div class="buzz-title">Debt Free</div>
+                <div class="buzz-desc">Financial stability and independence</div>
+            </div>
+            <div class="buzz-card">
+                <div class="buzz-title">Emphasis on Consistency</div>
+                <div class="buzz-desc">Batch-to-batch uniformity within narrow tolerances</div>
+            </div>
+            <div class="buzz-card">
+                <div class="buzz-title">Partially Backward Integrated</div>
+                <div class="buzz-desc">Control over critical raw material supply</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accreditations -->
+    <section class="accreditations-section reveal" id="accreditations">
+        <div class="section-header">
+            <h2 class="section-title"><span class="gradient">Accreditations</span> & Certifications</h2>
+            <p class="section-subtitle">Committed to international quality, environmental, and safety standards</p>
+        </div>
+        
+        <div class="accred-grid">
+            <div class="accred-card">
+                <svg class="accred-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="32" cy="32" r="20" stroke="#C9A961" stroke-width="2"/>
+                    <path d="M32 12L36 24L48 24L38 32L42 44L32 36L22 44L26 32L16 24L28 24L32 12Z" stroke="#C9A961" stroke-width="2"/>
+                </svg>
+                <div class="accred-title">ISO 9001:2015</div>
+                <div class="accred-desc">Quality Management System</div>
+            </div>
+            <div class="accred-card">
+                <svg class="accred-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M32 16C32 16 24 20 20 28C16 36 16 44 20 48C24 52 32 56 32 56C32 56 40 52 44 48C48 44 48 36 44 28C40 20 32 16 32 16Z" stroke="#C9A961" stroke-width="2"/>
+                </svg>
+                <div class="accred-title">ISO 14001:2015</div>
+                <div class="accred-desc">Environmental Management</div>
+            </div>
+            <div class="accred-card">
+                <svg class="accred-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M32 12L20 20V36C20 44 32 52 32 52C32 52 44 44 44 36V20L32 12Z" stroke="#C9A961" stroke-width="2"/>
+                </svg>
+                <div class="accred-title">ISO 45001:2018</div>
+                <div class="accred-desc">Occupational Health & Safety</div>
+            </div>
+            <div class="accred-card">
+                <svg class="accred-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="32" cy="32" r="20" stroke="#C9A961" stroke-width="2"/>
+                </svg>
+                <div class="accred-title">Export House</div>
+                <div class="accred-desc">Government Recognized</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="content-section reveal" id="about">
+        <h2>A Brief <span class="accent">Introduction</span></h2>
+        <p>
+            Devarsons is an ISO 9001, ISO 14001 and ISO 45001 accredited company, developing and producing specialty colorants. 
+            The group was established in 1923 with manufacturing activity based in Ahmedabad. With over 100 years of experience 
+            in Color Application, our product range is specifically designed to cater to customers in various industries such as 
+            Cosmetics, Crop Protection, Plastics, Petroleum Products and others.
+        </p>
+        
+        <div class="quote-block">
+            "Timing, perseverance, and ten years of trying will eventually make you look like an overnight success."
+            <div class="quote-author">— Biz Stone, co-founder of Twitter</div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="content-section reveal" id="philosophy" style="background: var(--stone); padding: 6rem 5%;">
+        <h2>Application-Based <span class="accent">Colour Solutions</span></h2>
+        
+        <div class="quote-block">
+            "Don't find customers for your products, find products for your customers."
+            <div class="quote-author">— Seth Godin</div>
+        </div>
+        
+        <p>
+            The emphasis within the organization is on developing new molecules or customizing current known molecules for use 
+            in highly specialized applications. Devarsons does not produce any one class of dye but rather an assortment of dyes 
+            with different chemistries to suit highly evolved applications. Our dyes comply with various worldwide regulations and 
+            our plant and product packaging are designed to eliminate foreign contamination.
+        </p>
+        
+        <div class="quote-block">
+            "The secret of success is to do the common thing uncommonly well."
+            <div class="quote-author">— John D. Rockefeller Jr.</div>
+        </div>
+    </section>
+
+    <!-- Customer Engagement -->
+    <section class="content-section reveal" id="customer-engagement">
+        <h2>Customer Engagement <span class="accent">- We Listen</span></h2>
+        
+        <div class="quote-block">
+            "There is only one boss. The customer. And he can fire everybody in the company from the chairman on down, simply by spending his money somewhere else."
+            <div class="quote-author">— Sam Walton, Founder of Walmart</div>
+        </div>
+        
+        <p>
+            In keeping with our company philosophy, the Devarsons R&D team is equipped and trained to modify dyes or the manufacturing 
+            process to suit the end application needs of our customer. This addresses typical issues faced by customers such as controlling 
+            trace impurities, compliance to various global standards or modification of physical characteristics of the molecule to ensure 
+            ease of use in the final application. The Devarsons development team has been successful in creating alternatives for its MNC 
+            customers not available elsewhere.
+        </p>
+        
+        <div class="quote-block">
+            "If you're competitor-focused, you have to wait until there is a competitor doing something. Being customer-focused allows you to be more pioneering."
+            <div class="quote-author">— Jeff Bezos</div>
+        </div>
+    </section>
+
+    <!-- Customer Service -->
+    <section class="content-section reveal" style="background: var(--stone); padding: 6rem 5%;">
+        <h2>Customer <span class="accent">Service</span></h2>
+        <p>
+            Devarsons operates on a fully integrated SAP platform encompassing all functions of the manufacturing, documentation and 
+            accounting cycle. This provides real time information within the organization as well as to customers with automated updates 
+            about order status, order movement and so on. Batch information is recorded in the software ensuring full traceability in case 
+            of any such requirement by the customer.
+        </p>
+        
+        <div class="quote-block">
+            "The companies that succeed are mistake fixing machines."
+            <div class="quote-author">— Brian Norgard</div>
+        </div>
+    </section>
+
+    <!-- Manufacturing Philosophy -->
+    <section class="content-section reveal">
+        <h2>Manufacturing <span class="accent">Philosophy</span></h2>
+        <p>
+            The Devarsons Plant Ops. team has been assigned with the task of producing a consistent product within a very narrow spread 
+            and minimal deviation. This has been achieved with a combination of commissioning technologically advanced equipment, extensive 
+            use of statistical tools and other innovative approaches such as a formal purchasing policy ensuring consistency of the raw 
+            material stream. As an adjunct to our EHSMS Policy, Continuous Improvement is strongly encouraged to refine manufacturing 
+            processes and reduce carbon footprint by eliminating waste.
+        </p>
+        
+        <div class="quote-block">
+            "It's more effective to do something valuable than to hope a logo or name will say it for you."
+            <div class="quote-author">— Jason Cohen</div>
+        </div>
+    </section>
+
+    <!-- R&D Philosophy -->
+    <section class="content-section reveal" id="rd" style="background: var(--stone); padding: 6rem 5%;">
+        <h2>R&D <span class="accent">Philosophy</span></h2>
+        <p>
+            Our lab is divided into 3 distinct sections – Development, Analytical and Application each with their own mission statement.
+        </p>
+        <p>
+            The Development lab has two objectives. The first is to support the plant initiative of achieving a consistent product by way 
+            of efficient production methods. Existing production processes are constantly tuned to minimize waste. The second objective is 
+            to develop molecules as required by our customers and to actively participate with our customers right from the development 
+            stage of their products.
+        </p>
+        <p>
+            The Analytical Lab is fully equipped to test all parameters in-house which are required by our customers in compliance with 
+            global regulatory standards across multiple end uses.
+        </p>
+        <p>
+            The Applications Lab is committed to support the Company Philosophy of providing application based colour solutions to our 
+            customers. This includes identification of correct molecules for a given application or modification of characteristics of a 
+            known molecule to make it compatible with the proposed end use.
+        </p>
+        <p>
+            As a result of the long experience in developing and manufacturing dyes, our lab identifies parameters not forming part of 
+            specifications. These form part of an internal specification. Strict monitoring of these additional parameters, separates our 
+            dyes from the rest and helps our products achieve superior performance in the end application.
+        </p>
+        
+        <div class="quote-block">
+            "What do you need to start a business? Three simple things: know your product better than anyone, know your customer, and have a burning desire to succeed."
+            <div class="quote-author">— Dave Thomas</div>
+        </div>
+    </section>
+
+    <!-- Distinctly Different -->
+    <section class="content-section reveal">
+        <h2>Distinctly <span class="accent">Different</span></h2>
+        <p>
+            Devarsons strives not to be just another dye manufacturer but rather provide value addition by recommending solutions for end 
+            applications. The vast experience of over 100 years is used to come up with novel ideas, not traditionally used in the markets. 
+            Most of this sort of engagement is done under NDA with the customer and solutions envisaged for a customer are kept strictly 
+            confidential.
+        </p>
+        <p>
+            Conformance to all regulations, social obligations and staff welfare are taken very seriously and the company goes above and 
+            beyond the government mandated minimal requirements to create a conducive work culture.
+        </p>
+        <p>
+            <strong>Devarsons is:</strong>
+        </p>
+        <ul style="margin-left: 2rem; margin-bottom: 1.5rem; line-height: 2;">
+            <li>A regulatory-compliant, customer-centric company that accords top priority for consistency of its product and EHSMS</li>
+            <li>Delivering a broad range of dyes for advanced applications to customers around the world</li>
+            <li>A strategic partner for global Oil & Petroleum, Plastics, Cosmetics and Defense companies</li>
+        </ul>
+        <p>
+            The bulk of our sales is generated through customized products, often of known and extensively used molecules but modified to 
+            suit specific end applications of our customers. This customer-centric approach has won the status of a preferred supplier/strategic 
+            partner for global corporates in the space of Oil & Petroleum products, Plastics, Cosmetics and Defense companies. We have aligned 
+            the entire organization to be decisive and agile that keeps us winning our customers' appreciation.
+        </p>
+        <p>
+            Devarsons has spent years creating a corporate culture centered around the customer and their specific needs. Our journey for 
+            innovations begins from this philosophy and this serves as the center-point. Our commitment is to keep up our tradition of 
+            delivering customer value and having our customers at the very heart of our corporate focus.
+        </p>
+    </section>
+
+    <!-- Products Section -->
+    <section class="content-section reveal" id="products" style="background: var(--stone); padding: 6rem 5%;">
+        <h2>Product <span class="accent">Lines</span></h2>
+        <p>Comprehensive range of specialty colorants for diverse applications</p>
+        
+        <div class="product-grid">
+            <div class="product-card">
+                <h3>Solvent Colours</h3>
+                <p>High-performance colorants for industrial applications</p>
+            </div>
+            <div class="product-card">
+                <h3>Food Colours</h3>
+                <p>Approved by F.D.C.A for safe food applications</p>
+            </div>
+            <div class="product-card">
+                <h3>Cosmetics Colours</h3>
+                <p>EU Cosmetics, US FDA, Schedule Q India compliant</p>
+            </div>
+            <div class="product-card">
+                <h3>Acid, Basic & Direct Colours</h3>
+                <p>Versatile dyes for multiple applications</p>
+            </div>
+            <div class="product-card">
+                <h3>Metal Complex Dyes</h3>
+                <p>Superior performance and fastness</p>
+            </div>
+            <div class="product-card">
+                <h3>Pigments & Emulsions</h3>
+                <p>High-quality pigment solutions</p>
+            </div>
+            <div class="product-card">
+                <h3>Lake Colours</h3>
+                <p>Insoluble pigments for diverse uses</p>
+            </div>
+            <div class="product-card">
+                <h3>Liquid Dyes</h3>
+                <p>Ready-to-use liquid formulations</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Segments -->
+    <section class="content-section reveal">
+        <h2>Business Segments <span class="accent">Served</span></h2>
+        <p>Delivering specialized colour solutions across diverse industries</p>
+        
+        <div class="segments-grid">
+            <div class="segment-item">Polymers</div>
+            <div class="segment-item">Cosmetics</div>
+            <div class="segment-item">Fuel, Lubricants & Coolants</div>
+            <div class="segment-item">Inks</div>
+            <div class="segment-item">Non-Destructive Testing</div>
+            <div class="segment-item">Medical</div>
+            <div class="segment-item">Textiles – High end VAT dyes</div>
+            <div class="segment-item">Agro Colorants</div>
+            <div class="segment-item">Paints & Varnishes</div>
+            <div class="segment-item">Aerial Acrobatics</div>
+            <div class="segment-item">Customized Colours for Specialized applications</div>
+        </div>
+    </section>
+
+    <!-- Policies -->
+    <section class="content-section reveal" style="background: var(--stone); padding: 6rem 5%;">
+        <h2>Our <span class="accent">Policies</span></h2>
+        
+        <div class="quote-block">
+            "If one does not know to which port one is sailing, no wind is favorable."
+            <div class="quote-author">— Lucius Annaeus Seneca</div>
+        </div>
+        
+        <p>
+            In order to meet its social obligations and staff welfare measures, Devarsons has implemented formal policies for Harassment, 
+            Equal Opportunity, Ethical Trading, Anti-Bribery, Collective Bargaining, Grievance and an HIV/AIDS Policy. These are available 
+            upon customer request.
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div>
+                <div class="footer-logo">
+                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/cab453ed-7d3e-4dfa-9012-038dbc50c1c5/2025-12-05T07-12-42-590Z-32a28241-chat-image-1764918762570-0.jpg" alt="Devarsons Industries">
+                </div>
+                <div class="footer-tagline">The Colour Solution Company</div>
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.8;">
+                    Application-driven, scientifically engineered colourants for global industries since 1923. 
+                    ISO certified, debt-free, and trusted by Fortune 500 companies worldwide.
+                </p>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul class="footer-links">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#philosophy">Philosophy</a></li>
+                    <li><a href="#customer-engagement">Customer Engagement</a></li>
+                    <li><a href="#rd">R&D</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Products</h4>
+                <ul class="footer-links">
+                    <li><a href="#products">Product Lines</a></li>
+                    <li><a href="#accreditations">Certifications</a></li>
+                    <li><a onclick="openModal('labTour')">Virtual Lab Tour</a></li>
+                    <li><a onclick="openModal('comparison')">Compare Products</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul class="footer-links">
+                    <li><a href="mailto:sales@devarsons.com">sales@devarsons.com</a></li>
+                    <li><a href="tel:+912223725120">+91 22 2372 5120</a></li>
+                    <li><a onclick="openModal('sampleRequest')">Request Sample</a></li>
+                    <li><a onclick="openModal('chatbot')">Live Chat</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>© 2025 Devarsons Industries Pvt. Ltd. All Rights Reserved.</div>
+        </div>
+    </footer>
+
+    <!-- MODALS START HERE -->
+    
     <!-- Color Selector Modal -->
     <div id="colorSelector" class="modal">
         <div class="modal-content">
@@ -1553,6 +2453,43 @@
 
         runLoadingAnimation();
 
+        // Scroll reveal animation
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', reveal);
+        reveal();
+
+        // Buzzword cards animation on scroll
+        function animateBuzzCards() {
+            const cards = document.querySelectorAll('.buzz-card');
+            
+            cards.forEach((card, index) => {
+                const windowHeight = window.innerHeight;
+                const cardTop = card.getBoundingClientRect().top;
+                
+                if (cardTop < windowHeight - 100) {
+                    setTimeout(() => {
+                        card.classList.add('visible');
+                    }, index * 50);
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateBuzzCards);
+        animateBuzzCards();
+
         // Modal Functions
         function openModal(modalId) {
             document.getElementById(modalId).classList.add('active');
@@ -1648,7 +2585,7 @@
             const msg = message.toLowerCase();
             
             if (msg.includes('sample') || msg.includes('request')) {
-                return 'I can help you request a sample! Click the "Request Sample" button in the floating menu or <a href="#" onclick="openModal(\'sampleRequest\')">click here</a>.';
+                return 'I can help you request a sample! Click the "Request Sample" button in the floating menu or contact sales@devarsons.com';
             } else if (msg.includes('price') || msg.includes('cost')) {
                 return 'For pricing information, please contact our sales team at sales@devarsons.com or call +91 22 2372 5120. Pricing varies based on volume and specifications.';
             } else if (msg.includes('product') || msg.includes('dye')) {
@@ -1675,7 +2612,7 @@
             
             if (currentCost && monthlyUsage && devarsonsCost) {
                 const costSavings = (currentCost - devarsonsCost) * monthlyUsage;
-                const qualitySavings = (currentCost * monthlyUsage * rejectionRate / 100) * 0.9; // 90% reduction in rejections
+                const qualitySavings = (currentCost * monthlyUsage * rejectionRate / 100) * 0.9;
                 const totalMonthlySavings = costSavings + qualitySavings;
                 const annualSavings = totalMonthlySavings * 12;
                 
@@ -1695,6 +2632,17 @@
                 document.body.style.overflow = 'auto';
             }
         }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
     </script>
 </body>
 </html>
