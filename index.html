@@ -657,6 +657,29 @@
             border-bottom-right-radius: 5px;
         }
 
+        .chat-quick-replies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .quick-reply-btn {
+            padding: 0.5rem 1rem;
+            background: var(--stone);
+            border: 1px solid var(--primary-orange);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: var(--primary-orange);
+        }
+
+        .quick-reply-btn:hover {
+            background: var(--primary-orange);
+            color: var(--white);
+        }
+
         .chat-input-container {
             display: flex;
             gap: 0.5rem;
@@ -679,6 +702,41 @@
             border: none;
             cursor: pointer;
             font-size: 1.2rem;
+        }
+
+        .typing-indicator {
+            display: none;
+            padding: 1rem;
+            background: var(--white);
+            border-radius: 15px;
+            width: fit-content;
+        }
+
+        .typing-indicator.active {
+            display: block;
+        }
+
+        .typing-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--primary-orange);
+            margin: 0 2px;
+            animation: typingBounce 1.4s infinite;
+        }
+
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typingBounce {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-10px); }
         }
 
         /* ROI Calculator */
@@ -2180,15 +2238,20 @@
                     <div class="chat-messages" id="chatMessages">
                         <div class="chat-message bot">
                             <div class="message-bubble">
-                                Hello! I'm your Devarsons assistant. How can I help you today?
-                                <br><br>
-                                I can help with:
-                                <br>• Product recommendations
-                                <br>• Technical specifications
-                                <br>• Sample requests
-                                <br>• Pricing inquiries
+                                👋 Hello! I'm your Devarsons AI assistant. How can I help you today?
+                                <div class="chat-quick-replies">
+                                    <button class="quick-reply-btn" onclick="quickReply('Tell me about your products')">📦 Products</button>
+                                    <button class="quick-reply-btn" onclick="quickReply('Request a sample')">🎨 Sample</button>
+                                    <button class="quick-reply-btn" onclick="quickReply('ISO certifications')">🏆 Certifications</button>
+                                    <button class="quick-reply-btn" onclick="quickReply('Pricing information')">💰 Pricing</button>
+                                </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="typing-indicator" id="typingIndicator">
+                        <span class="typing-dot"></span>
+                        <span class="typing-dot"></span>
+                        <span class="typing-dot"></span>
                     </div>
                     <div class="chat-input-container">
                         <input type="text" class="chat-input" id="chatInput" placeholder="Type your message..." onkeypress="handleChatEnter(event)">
@@ -2549,7 +2612,370 @@
             event.target.reset();
         }
 
-        // Chatbot
+        // Enhanced Chatbot with comprehensive responses
+        const chatbotKnowledge = {
+            // Products
+            'product': {
+                keywords: ['product', 'dye', 'colour', 'color', 'what do you sell', 'offerings'],
+                response: `We offer 8 comprehensive product lines:
+
+🎨 **Solvent Colours** - High-performance industrial colorants
+🍔 **Food Colours** - FDA approved for safe food applications
+💄 **Cosmetics Colours** - EU, US FDA, Schedule Q India compliant
+🧪 **Acid, Basic & Direct Colours** - Versatile multi-application dyes
+⚗️ **Metal Complex Dyes** - Superior performance and fastness
+🎨 **Pigments & Emulsions** - High-quality pigment solutions
+🌈 **Lake Colours** - Insoluble pigments for diverse uses
+💧 **Liquid Dyes** - Ready-to-use liquid formulations
+
+Which product line interests you?`
+            },
+            
+            // Sample Request
+            'sample': {
+                keywords: ['sample', 'request', 'try', 'test', 'free sample'],
+                response: `I'd be happy to help you request a free sample! 
+
+📦 **Sample Request Process:**
+1. Click the "Request Sample" button below
+2. Fill in your details and application requirements
+3. Our team will contact you within 24 hours
+4. Receive your customized sample within 5-7 business days
+
+Would you like me to open the sample request form for you?`,
+                action: () => { closeModal('chatbot'); openModal('sampleRequest'); }
+            },
+            
+            // Pricing
+            'price': {
+                keywords: ['price', 'cost', 'pricing', 'how much', 'quote', 'quotation'],
+                response: `💰 **Pricing Information:**
+
+Our pricing varies based on:
+• Product type and specifications
+• Order volume and frequency
+• Customization requirements
+• Delivery location
+
+📞 **For accurate pricing:**
+• Email: sales@devarsons.com
+• Phone: +91 22 2372 5120
+• Or request a sample and our team will provide a detailed quote
+
+💡 **Tip:** Use our ROI Calculator to estimate potential cost savings!`
+            },
+            
+            // ISO Certifications
+            'iso': {
+                keywords: ['iso', 'certification', 'certified', 'quality', 'standard', 'accreditation'],
+                response: `🏆 **Our Certifications:**
+
+✅ **ISO 9001:2015** - Quality Management System
+✅ **ISO 14001:2015** - Environmental Management
+✅ **ISO 45001:2018** - Occupational Health & Safety
+✅ **Government Recognized Export House**
+
+We're committed to international quality, environmental, and safety standards. All our products comply with global regulations including FDA, EU Cosmetics, and Schedule Q India.`
+            },
+            
+            // Company Info
+            'company': {
+                keywords: ['about', 'company', 'history', 'established', 'who are you', 'devarsons'],
+                response: `🏭 **About Devarsons Industries:**
+
+📅 **Established:** 1923 (102 years of excellence!)
+📍 **Location:** Ahmedabad, India
+🌍 **Reach:** Supplying to MNCs globally
+💪 **Strength:** Debt-free, financially stable
+🔬 **Focus:** Application-oriented colour solutions
+
+**What makes us different:**
+• 99.9% batch-to-batch consistency
+• Fully SAP integrated operations
+• Dedicated R&D team for custom formulations
+• 24/7 technical support
+• 2-3 weeks lead time
+
+We're not just a dye manufacturer - we're your strategic colour solution partner!`
+            },
+            
+            // Industries
+            'industry': {
+                keywords: ['industry', 'application', 'use', 'sector', 'market'],
+                response: `🏢 **Industries We Serve:**
+
+• 🧴 Cosmetics & Personal Care
+• 🧪 Plastics & Polymers
+• ⛽ Petroleum Products (Fuel, Lubricants, Coolants)
+• 🖊️ Inks & Printing
+• 🍔 Food & Beverage
+• 👕 Textiles (High-end VAT dyes)
+• 🌾 Agro Colorants
+• 🎨 Paints & Varnishes
+• 🔬 Medical Applications
+• 🔍 Non-Destructive Testing
+• ✈️ Aerial Acrobatics
+• ⚙️ Customized Specialized Applications
+
+Which industry are you in?`
+            },
+            
+            // R&D
+            'rd': {
+                keywords: ['r&d', 'research', 'development', 'lab', 'laboratory', 'custom', 'formulation'],
+                response: `🔬 **Our R&D Capabilities:**
+
+**3 Specialized Labs:**
+
+1️⃣ **Development Lab**
+   • Custom molecule development
+   • Process optimization
+   • Waste minimization
+
+2️⃣ **Analytical Lab**
+   • In-house testing for all parameters
+   • Global regulatory compliance
+   • Quality assurance
+
+3️⃣ **Application Lab**
+   • Application-specific solutions
+   • Molecule modification
+   • Performance testing
+
+💡 **We can:**
+• Modify dyes for your specific application
+• Control trace impurities
+• Adjust physical characteristics
+• Ensure regulatory compliance
+
+Want to discuss a custom formulation?`
+            },
+            
+            // Lead Time
+            'delivery': {
+                keywords: ['delivery', 'lead time', 'shipping', 'how long', 'when', 'timeline'],
+                response: `⏱️ **Delivery Timeline:**
+
+📦 **Standard Orders:** 2-3 weeks
+🚀 **Express Orders:** Available on request
+🌍 **Global Shipping:** We ship to 50+ countries
+
+**Our Advantage:**
+• Faster than competitors (4-8 weeks)
+• Real-time order tracking via SAP
+• Automated status updates
+• Full batch traceability
+
+📞 For urgent requirements, contact:
+• Email: sales@devarsons.com
+• Phone: +91 22 2372 5120`
+            },
+            
+            // Technical Support
+            'support': {
+                keywords: ['support', 'help', 'technical', 'assistance', 'problem', 'issue'],
+                response: `🛠️ **Technical Support:**
+
+**We provide:**
+• 24/7 technical assistance
+• Application guidance
+• Troubleshooting support
+• Implementation help
+• Performance optimization
+
+**Contact Methods:**
+📧 Email: sales@devarsons.com
+📞 Phone: +91 22 2372 5120
+💬 Live Chat: Right here!
+
+**Response Time:**
+• Chat: Immediate
+• Email: Within 4 hours
+• Phone: Instant
+
+How can I assist you today?`
+            },
+            
+            // Consistency
+            'consistency': {
+                keywords: ['consistency', 'quality', 'batch', 'uniform', 'reliable'],
+                response: `✅ **Our Consistency Guarantee:**
+
+**99.9% Batch-to-Batch Consistency**
+
+**How we achieve this:**
+• Advanced statistical quality control tools
+• Technologically advanced equipment
+• Formal purchasing policy for raw materials
+• Continuous process monitoring
+• Internal specifications beyond standard requirements
+
+**Benefits for you:**
+• Predictable results every time
+• Reduced rejection rates
+• Lower production costs
+• Consistent end-product quality
+
+💡 Use our ROI Calculator to see potential savings!`
+            },
+            
+            // SAP Integration
+            'sap': {
+                keywords: ['sap', 'tracking', 'order status', 'traceability', 'system'],
+                response: `💻 **SAP Integration Benefits:**
+
+**Real-Time Transparency:**
+• Order status tracking
+• Automated updates
+• Batch information recording
+• Full traceability
+• Documentation cycle management
+
+**You get:**
+• Instant order visibility
+• Automated notifications
+• Complete batch history
+• Seamless communication
+• Efficient operations
+
+This is a unique advantage - most competitors don't offer this level of integration!`
+            },
+            
+            // Sustainability
+            'sustainability': {
+                keywords: ['sustainability', 'environment', 'green', 'eco', 'ehs', 'responsible'],
+                response: `🌱 **Our Sustainability Commitment:**
+
+**ISO 14001:2015 Certified**
+
+**Environmental Initiatives:**
+• Responsible sourcing practices
+• Waste minimization programs
+• Carbon footprint reduction
+• Contamination-free packaging
+• Continuous improvement culture
+
+**EHS Policy:**
+• Beyond government requirements
+• Strong safety commitment
+• Employee welfare focus
+• Ethical trading practices
+
+We go above and beyond compliance to create a sustainable future!`
+            },
+            
+            // Comparison
+            'compare': {
+                keywords: ['compare', 'competitor', 'vs', 'better', 'difference', 'why choose'],
+                response: `⚖️ **Why Choose Devarsons?**
+
+**Our Advantages:**
+✅ 99.9% consistency (vs 92-95%)
+✅ Custom formulation (vs limited/none)
+✅ ISO Triple Certified (vs single/none)
+✅ Full SAP integration (vs none)
+✅ Dedicated R&D team (vs limited/none)
+✅ 2-3 weeks lead time (vs 4-8 weeks)
+✅ 24/7 support (vs business hours/email)
+✅ 102 years heritage (vs 28-45 years)
+✅ Debt-free company
+
+Want to see the full comparison table?`,
+                action: () => { closeModal('chatbot'); openModal('comparison'); }
+            },
+            
+            // Contact
+            'contact': {
+                keywords: ['contact', 'reach', 'call', 'email', 'address', 'location'],
+                response: `📞 **Contact Information:**
+
+**Head Office:**
+📍 Ahmedabad, India
+
+**Get in Touch:**
+📧 Email: sales@devarsons.com
+📞 Phone: +91 22 2372 5120
+💬 Live Chat: Right here!
+
+**Business Hours:**
+🕐 Monday - Friday: 9:00 AM - 6:00 PM IST
+🕐 Saturday: 9:00 AM - 1:00 PM IST
+
+**Quick Actions:**
+• Request a sample
+• Schedule a call
+• Book a lab tour
+• Get a quote
+
+What would you like to do?`
+            },
+            
+            // Lab Tour
+            'tour': {
+                keywords: ['tour', 'visit', 'facility', 'lab tour', 'see'],
+                response: `🔬 **Virtual Lab Tour Available!**
+
+**Explore our facilities:**
+• Development Lab - Where innovation happens
+• Analytical Lab - Precision testing
+• Application Lab - Real-world testing
+• Manufacturing Floor - Scale production
+• Quality Control - Statistical excellence
+• Packaging Area - Contamination-free
+
+Would you like to:
+1. Take a virtual tour now
+2. Schedule a physical visit
+
+Click below to start the virtual tour!`,
+                action: () => { closeModal('chatbot'); openModal('labTour'); }
+            },
+            
+            // ROI
+            'roi': {
+                keywords: ['roi', 'savings', 'calculator', 'cost benefit', 'return'],
+                response: `💰 **Calculate Your Savings!**
+
+**Our ROI Calculator helps you estimate:**
+• Monthly cost savings
+• Annual savings potential
+• Quality improvement benefits
+• Payback period
+
+**Typical savings:**
+• 5-10% on material costs
+• 90% reduction in rejection rates
+• Faster lead times
+• Better consistency
+
+Want to calculate your specific ROI?`,
+                action: () => { closeModal('chatbot'); openModal('roiCalculator'); }
+            },
+            
+            // Color Selector
+            'selector': {
+                keywords: ['find', 'which', 'recommend', 'suggest', 'right dye', 'choose'],
+                response: `🎨 **Find Your Perfect Dye!**
+
+**Our Color Selector Tool helps you:**
+• Select by industry
+• Filter by properties
+• Get instant recommendations
+• Request samples directly
+
+**Properties we can match:**
+• Heat stability
+• Light fastness
+• Water/oil solubility
+• FDA approval
+• High strength
+
+Ready to find your perfect match?`,
+                action: () => { closeModal('chatbot'); openModal('colorSelector'); }
+            }
+        };
+
+        // Chatbot Functions
         function sendMessage() {
             const input = document.getElementById('chatInput');
             const message = input.value.trim();
@@ -2566,16 +2992,27 @@
             
             input.value = '';
             
-            // Bot response (simulated)
+            // Show typing indicator
+            const typingIndicator = document.getElementById('typingIndicator');
+            typingIndicator.classList.add('active');
+            
+            // Bot response (simulated delay)
             setTimeout(() => {
+                typingIndicator.classList.remove('active');
+                
                 const botMsg = document.createElement('div');
                 botMsg.className = 'chat-message bot';
                 
-                let response = getBotResponse(message);
+                const response = getBotResponse(message);
                 
-                botMsg.innerHTML = `<div class="message-bubble">${response}</div>`;
+                botMsg.innerHTML = `<div class="message-bubble">${response.text}</div>`;
                 messagesContainer.appendChild(botMsg);
                 messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                
+                // Execute action if available
+                if (response.action) {
+                    setTimeout(response.action, 500);
+                }
             }, 1000);
             
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
@@ -2584,17 +3021,42 @@
         function getBotResponse(message) {
             const msg = message.toLowerCase();
             
-            if (msg.includes('sample') || msg.includes('request')) {
-                return 'I can help you request a sample! Click the "Request Sample" button in the floating menu or contact sales@devarsons.com';
-            } else if (msg.includes('price') || msg.includes('cost')) {
-                return 'For pricing information, please contact our sales team at sales@devarsons.com or call +91 22 2372 5120. Pricing varies based on volume and specifications.';
-            } else if (msg.includes('product') || msg.includes('dye')) {
-                return 'We offer 8 product lines: Solvent Colours, Food Colours, Cosmetics Colours, Acid/Basic/Direct Colours, Metal Complex Dyes, Pigments & Emulsions, Lake Colours, and Liquid Dyes. Which industry are you in?';
-            } else if (msg.includes('iso') || msg.includes('certification')) {
-                return 'Devarsons is ISO 9001:2015, ISO 14001:2015, and ISO 45001:2018 certified. We are also a Government Recognized Export House.';
-            } else {
-                return 'Thank you for your question! For detailed information, please contact our team at sales@devarsons.com or use our sample request form. How else can I help you?';
+            // Check each knowledge category
+            for (const [key, data] of Object.entries(chatbotKnowledge)) {
+                if (data.keywords.some(keyword => msg.includes(keyword))) {
+                    return {
+                        text: data.response,
+                        action: data.action
+                    };
+                }
             }
+            
+            // Default response with suggestions
+            return {
+                text: `I'd be happy to help! Here are some topics I can assist with:
+
+📦 **Products** - Our 8 product lines
+🎨 **Samples** - Request free samples
+💰 **Pricing** - Get a quote
+🏆 **Certifications** - ISO standards
+🏭 **Company** - About Devarsons
+🔬 **R&D** - Custom formulations
+🌍 **Industries** - Applications we serve
+📞 **Contact** - Get in touch
+
+Or try asking:
+• "Tell me about your products"
+• "How do I request a sample?"
+• "What are your ISO certifications?"
+• "Compare with competitors"
+
+What would you like to know?`
+            };
+        }
+
+        function quickReply(message) {
+            document.getElementById('chatInput').value = message;
+            sendMessage();
         }
 
         function handleChatEnter(event) {
