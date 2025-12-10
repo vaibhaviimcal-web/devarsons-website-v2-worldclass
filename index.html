@@ -2851,7 +2851,7 @@
         window.addEventListener('scroll', animateBuzzCards);
         animateBuzzCards();
 
-        // Modal Functions
+        // Modal Functions - ENHANCED WITH VIDEO STOP
         function openModal(modalId) {
             document.getElementById(modalId).classList.add('active');
             document.body.style.overflow = 'hidden';
@@ -2860,6 +2860,22 @@
         function closeModal(modalId) {
             document.getElementById(modalId).classList.remove('active');
             document.body.style.overflow = 'auto';
+            
+            // STOP ALL VIDEOS IN THE MODAL WHEN CLOSING
+            if (modalId === 'labTour') {
+                stopAllVideos();
+            }
+        }
+
+        // FUNCTION TO STOP ALL YOUTUBE VIDEOS
+        function stopAllVideos() {
+            const iframes = document.querySelectorAll('#labTour iframe');
+            iframes.forEach(iframe => {
+                // Reset iframe src to stop video
+                const src = iframe.src;
+                iframe.src = '';
+                iframe.src = src;
+            });
         }
 
         // Color Selector
@@ -3355,8 +3371,8 @@ What would you like to know?`
         // Close modal on outside click
         window.onclick = function(event) {
             if (event.target.classList.contains('modal')) {
-                event.target.classList.remove('active');
-                document.body.style.overflow = 'auto';
+                const modalId = event.target.id;
+                closeModal(modalId);
             }
         }
 
