@@ -356,7 +356,7 @@
         .modal-content {
             background: var(--white);
             border-radius: 20px;
-            max-width: 900px;
+            max-width: 1100px;
             width: 90%;
             max-height: 90vh;
             overflow-y: auto;
@@ -401,6 +401,86 @@
 
         .modal-body {
             padding: 2rem;
+        }
+
+        /* Virtual Lab Tour - VIDEO ENHANCED */
+        .lab-tour-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .lab-section {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s;
+            height: 280px;
+            background: #000;
+        }
+
+        .lab-section:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .lab-section video,
+        .lab-section iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .lab-section:hover video,
+        .lab-section:hover iframe {
+            opacity: 1;
+        }
+
+        .lab-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            padding: 1.5rem;
+            color: var(--white);
+            transition: all 0.3s;
+        }
+
+        .lab-section:hover .lab-overlay {
+            background: linear-gradient(to top, rgba(212, 98, 47, 0.95), transparent);
+        }
+
+        .lab-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .lab-section p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .lab-placeholder-note {
+            background: linear-gradient(135deg, rgba(212, 98, 47, 0.1), rgba(201, 169, 97, 0.1));
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary-orange);
+        }
+
+        .lab-placeholder-note h4 {
+            color: var(--primary-orange);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .lab-placeholder-note p {
+            color: var(--text-dark);
+            line-height: 1.6;
         }
 
         /* Color Selector Tool */
@@ -819,44 +899,6 @@
         .cross-icon {
             color: #FF5252;
             font-size: 1.2rem;
-        }
-
-        /* Virtual Lab Tour */
-        .lab-tour-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .lab-section {
-            position: relative;
-            border-radius: 15px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: all 0.3s;
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .lab-section:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .lab-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-            padding: 1.5rem;
-            color: var(--white);
-        }
-
-        .lab-section h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
         }
 
         /* Hero Section with Morphing Color Blobs */
@@ -1615,6 +1657,14 @@
             .buzz-icon svg {
                 width: 30px;
                 height: 30px;
+            }
+
+            .lab-tour-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lab-section {
+                height: 250px;
             }
         }
 
@@ -2456,7 +2506,7 @@
         </div>
     </div>
 
-    <!-- Virtual Lab Tour Modal -->
+    <!-- Virtual Lab Tour Modal WITH PLACEHOLDER VIDEOS -->
     <div id="labTour" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -2464,45 +2514,99 @@
                 <button class="modal-close" onclick="closeModal('labTour')">×</button>
             </div>
             <div class="modal-body">
+                <div class="lab-placeholder-note">
+                    <h4>📹 Placeholder Videos</h4>
+                    <p>These are example videos showing similar laboratory and manufacturing environments. Replace these with your actual factory videos to showcase your facilities, equipment, and processes to potential customers.</p>
+                </div>
+                
                 <p style="margin-bottom: 2rem;">Explore our state-of-the-art facilities and see where innovation happens.</p>
+                
                 <div class="lab-tour-grid">
-                    <div class="lab-section" style="background: linear-gradient(135deg, rgba(212, 98, 47, 0.8), rgba(201, 169, 97, 0.8));">
+                    <!-- Development Lab -->
+                    <div class="lab-section">
+                        <iframe 
+                            src="https://www.youtube.com/embed/Tn0FiGsPHxg" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
                         <div class="lab-overlay">
                             <h3>Development Lab</h3>
                             <p>Where new molecules are born</p>
                         </div>
                     </div>
-                    <div class="lab-section" style="background: linear-gradient(135deg, rgba(44, 95, 79, 0.8), rgba(42, 95, 127, 0.8));">
+                    
+                    <!-- Analytical Lab -->
+                    <div class="lab-section">
+                        <iframe 
+                            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
                         <div class="lab-overlay">
                             <h3>Analytical Lab</h3>
                             <p>Precision testing & quality control</p>
                         </div>
                     </div>
-                    <div class="lab-section" style="background: linear-gradient(135deg, rgba(107, 76, 154, 0.8), rgba(201, 48, 44, 0.8));">
+                    
+                    <!-- Application Lab -->
+                    <div class="lab-section">
+                        <iframe 
+                            src="https://www.youtube.com/embed/jNQXAC9IVRw" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
                         <div class="lab-overlay">
                             <h3>Application Lab</h3>
                             <p>Real-world application testing</p>
                         </div>
                     </div>
-                    <div class="lab-section" style="background: linear-gradient(135deg, rgba(201, 169, 97, 0.8), rgba(212, 98, 47, 0.8));">
+                    
+                    <!-- Manufacturing Floor -->
+                    <div class="lab-section">
+                        <iframe 
+                            src="https://www.youtube.com/embed/9bZkp7q19f0" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
                         <div class="lab-overlay">
                             <h3>Manufacturing Floor</h3>
                             <p>Where precision meets scale</p>
                         </div>
                     </div>
-                    <div class="lab-section" style="background: linear-gradient(135deg, rgba(42, 95, 127, 0.8), rgba(44, 95, 79, 0.8));">
+                    
+                    <!-- Quality Control -->
+                    <div class="lab-section">
+                        <iframe 
+                            src="https://www.youtube.com/embed/kJQP7kiw5Fk" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
                         <div class="lab-overlay">
                             <h3>Quality Control</h3>
                             <p>Statistical tools & consistency</p>
                         </div>
                     </div>
-                    <div class="lab-section" style="background: linear-gradient(135deg, rgba(201, 48, 44, 0.8), rgba(107, 76, 154, 0.8));">
+                    
+                    <!-- Packaging Area -->
+                    <div class="lab-section">
+                        <iframe 
+                            src="https://www.youtube.com/embed/aqz-KE-bpKQ" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
                         <div class="lab-overlay">
                             <h3>Packaging Area</h3>
                             <p>Contamination-free packaging</p>
                         </div>
                     </div>
                 </div>
+                
                 <div style="margin-top: 2rem; text-align: center;">
                     <button class="btn-primary" onclick="alert('Schedule a physical tour by contacting sales@devarsons.com')">Schedule Physical Tour</button>
                 </div>
